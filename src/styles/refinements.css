@@ -1,0 +1,132 @@
+/* Refinamiento editorial sobre la estructura y la identidad existentes. */
+:root{--gold-muted:#9b7b3e;--paper:#fffdf8;--rule:#d9d0bd}
+body{color:#303327}
+h2 em{font-style:normal;font-weight:500}
+h2{letter-spacing:-1.2px;font-size:clamp(44px,4.3vw,66px)}
+.eyebrow{letter-spacing:1.7px;color:#786131;font-size:10px}
+.section{padding-top:112px;padding-bottom:112px}
+.button{gap:13px;border:1px solid transparent;min-height:54px;letter-spacing:.1px;padding:17px 23px}
+.button:hover{transform:none}
+.button:active{transform:translateY(1px)}
+a:focus-visible,button:focus-visible{outline:2px solid #b68b35;outline-offset:5px}
+.whatsapp-icon{flex-shrink:0;vertical-align:middle}
+.whatsapp-cta{gap:13px}
+.whatsapp-cta>svg:last-child:not(.whatsapp-icon){margin-left:9px}
+.navbar{height:98px;border-bottom:1px solid #26341f0c;padding-left:6%;padding-right:6%}
+.brand img{width:51px;height:73px}
+.brand span{font-size:8px;letter-spacing:1.6px}
+.brand strong{font-size:32px}
+.navbar nav{gap:26px;font-size:12px}
+.navbar nav a{padding:10px 0}
+.nav-cta{min-height:44px;gap:11px;padding:13px 18px;border:1px solid #26341f;transition:background .2s}
+.nav-cta:hover{background:#3c4b32}
+.hero{grid-template-columns:.94fr 1.06fr;min-height:690px}
+.hero-copy{padding:70px 10% 83px 12%}
+.hero h1{font-size:clamp(72px,6.7vw,102px);letter-spacing:-2px;line-height:1.03;margin-bottom:27px}
+.hero-brand{margin:30px 0 18px;font-size:10px;letter-spacing:2px;color:#d0d3c6}
+.hero-description{font-size:14px;line-height:1.85;max-width:325px;color:#e0e2d6}
+.hero-actions{gap:22px;margin-top:32px;align-items:flex-start}
+.hero-whatsapp{background:#d9be85;color:#20291c;border-color:#d9be85;font-size:12px}
+.hero-whatsapp:hover{background:#ead3a5;border-color:#ead3a5}
+.hero-discover{display:flex;align-items:center;gap:18px;font-size:11px;color:#e8e8dc;border-bottom:1px solid #e8e8dc55;padding-bottom:8px}
+.hero-discover:hover{border-color:#e8e8dc}
+.hero-signature{font-size:17px;margin-top:38px;color:#d0c4a7}
+.hero-signature i{font-style:normal}
+.hero-photo>img{object-position:center 54%}
+.photo-caption{font-size:8px;letter-spacing:1.6px}
+.scroll-hint{font-size:8px;letter-spacing:1.5px}
+.brand-strip{padding:24px 8%;letter-spacing:1.4px}
+.brand-strip>span:nth-child(even){font-size:12px}
+.about{grid-template-columns:1.05fr 1fr;gap:11%;align-items:center}
+.editorial-photo{padding:0;max-width:490px}
+.editorial-photo:after{display:none}
+.editorial-photo img{height:540px;object-position:center 56%}
+.image-label{bottom:20px;left:21px;font-size:8px;letter-spacing:1.2px}
+.section-copy p{font-size:14px;line-height:1.9;color:#606355}
+.about .section-copy{padding-top:30px}
+.about .section-copy p+p{margin-top:19px}
+.gold-line{background:#b7a276;width:40px;margin:27px 0}
+.underlined{font-size:12px;gap:17px;transition:color .2s}
+.underlined:hover{color:#806223}
+.features{padding:34px 0;gap:32px}
+.features p{font:12px/1.7 Inter,sans-serif;max-width:175px}
+.features svg{width:23px;color:#977a3b}
+.section-heading{margin-bottom:49px;gap:40px}
+.section-heading>p{font-size:13px;line-height:1.8}
+.product{max-width:1080px;grid-template-columns:1.05fr 1fr;gap:12%}
+.product-photo{height:570px;background:#e8e0d1}
+.product-photo img{object-fit:contain;object-position:center;background:#e8e0d1}
+.product-tag{left:19px;top:19px;border:1px solid #d6c7a9;background:#fffdf8e8;letter-spacing:1.2px}
+.product-copy h3{font-size:65px;margin:20px 0 25px}
+.product-copy>p{font-size:14px;line-height:1.9;max-width:360px;color:#606355}
+.product-copy small{font-size:11px;line-height:1.8;max-width:300px}
+.product-copy .button{margin-top:19px}
+.seasonal{grid-template-columns:1.15fr 1fr;background:#671f2a;position:relative}
+.seasonal-copy{padding:65px 12%}
+.seasonal h2{font-size:clamp(48px,4.4vw,66px);line-height:1.08;margin-top:26px}
+.seasonal p{font-size:14px;line-height:1.9;color:#eee0db;max-width:340px}
+.seasonal>img{height:560px;object-position:center 55%}
+.seasonal .gold{background:transparent;color:#f2dfb4;border-color:#c6a76c;padding:16px 22px}
+.seasonal .gold:hover{background:#f2dfb4;color:#56202a}
+.seasonal-note{font:11px/1.7 Inter,sans-serif;color:#d7bfa6;margin-top:24px}
+.gallery-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:25px;columns:auto}
+.gallery-item{margin:0;aspect-ratio:3/4;background:#eae2d5}
+.gallery-item img,.gallery-item:nth-child(3n+1) img,.gallery-item:nth-child(5n) img{height:100%;width:100%;object-fit:cover;object-position:center}
+.gallery-item.item-0 img,.gallery-item.item-4 img{object-fit:contain}
+.gallery-item.item-1 img{object-position:center 55%}
+.gallery-item.item-3 img{object-position:center 58%}
+.gallery-more{display:flex;justify-content:space-between;gap:20px;align-items:center;border-bottom:1px solid var(--rule);padding:26px 0 21px}
+.gallery-more button{background:transparent;border-bottom:0;padding:8px 0}
+.gallery-more>span{font-size:10px;color:#717363}
+.gallery .section-heading .underlined{font-size:11px}
+.story{max-width:880px;padding-top:35px;padding-bottom:110px}
+.story>svg{width:32px;height:32px;margin-bottom:26px}
+.story h2{font-size:clamp(45px,4.2vw,64px);margin-bottom:30px}
+.story p{font:23px/1.8 'Cormorant Garamond',Georgia,serif;max-width:620px;margin:0 auto;color:#515646}
+.story-signature{font:10px/1.8 Inter,sans-serif;letter-spacing:1.5px;text-transform:uppercase;margin-top:29px;color:#7a683b}
+.order{background:#ebe6db;grid-template-columns:1fr 1fr;gap:9%;padding-top:98px;padding-bottom:98px;border-top:1px solid #ddd3c0}
+.order h2{font-size:clamp(46px,4.3vw,64px);line-height:1.08;margin-bottom:27px}
+.order .section-copy p{max-width:380px}
+.contact-whatsapp{border-top:1px solid #c8c0ad;padding-top:25px;margin-top:33px;gap:17px;max-width:370px;align-items:center}
+.contact-whatsapp>svg:first-child{color:#44553a}
+.contact-whatsapp span{display:grid;gap:7px}
+.contact-whatsapp small{font-size:11px;color:#686c5c}
+.contact-whatsapp strong{font:500 21px/1.3 Inter,sans-serif;letter-spacing:-.4px}
+.contact-whatsapp>svg:last-child{margin-left:auto}
+.contact-link:not(.contact-whatsapp){font-size:12px;color:#4d5745;margin-top:24px}
+.order form{background:#fffdf8;padding:33px;border:1px solid #d9d0bf;align-self:start;box-shadow:0 8px 30px #302b2204}
+.order label{font-size:11px;color:#444a3a;margin-bottom:10px;font-weight:500}
+.order label span{font-size:10px;font-weight:400}
+.order input,.order select,.order textarea{background:#faf8f2;border-color:#d5d0c2;font-size:13px;min-height:48px;margin-bottom:24px;padding:14px 13px;transition:border-color .2s}
+.order input::placeholder,.order textarea::placeholder{color:#7c7f72}
+.order input:hover,.order select:hover,.order textarea:hover{border-color:#a8ad98}
+.order input:focus,.order select:focus,.order textarea:focus{border-color:#6f7c61;outline:2px solid #6f7c6140;outline-offset:2px}
+.order .button{font-size:12px;gap:12px;padding-left:15px;padding-right:15px}
+.order .button>svg:last-child{margin-left:auto}
+.order small{font-size:10px;line-height:1.8}
+.form-status:empty{display:none}
+.form-status{padding:13px 0 0;border-top:1px solid var(--rule)}
+footer{padding-top:62px;background:#1e251b}
+.footer-main{align-items:start;display:grid;grid-template-columns:1.2fr .8fr 1fr;gap:50px;padding-bottom:43px}
+.footer-brand{align-items:center;gap:17px}
+.footer-brand img{width:64px;height:95px;flex-shrink:0}
+.footer-brand span{font-size:24px;line-height:1.25}
+.footer-brand i{font:11px/1.7 Inter,sans-serif;margin-top:9px;color:#c9c2ae}
+.footer-main nav{padding-top:7px;gap:19px 28px;font-size:11px}
+.footer-social{gap:24px;padding-top:7px;font-size:11px}
+.footer-social a{gap:10px;align-items:center;line-height:1.5}
+.footer-social a>svg:last-child{margin-left:auto}
+.footer-social a span{display:grid;gap:5px;color:#c9c2ae;font-size:10px}
+.footer-social strong{font-weight:400;color:#f0ebdf;font-size:13px;white-space:nowrap}
+.footer-bottom{color:#b6bcac;line-height:1.9}
+.whatsapp-float{width:49px;height:49px;border-color:#8f9c79;background:#26341f;box-shadow:0 4px 15px #11110d20;transition:background .2s}
+.whatsapp-float:hover{background:#3c4b32}
+.whatsapp-tooltip{position:absolute;right:62px;white-space:nowrap;padding:10px 14px;background:#26341f;color:#fffdf8;font-size:11px;opacity:0;visibility:hidden;transition:opacity .2s}
+.whatsapp-float:hover .whatsapp-tooltip,.whatsapp-float:focus-visible .whatsapp-tooltip{opacity:1;visibility:visible}
+@media(min-width:1600px){.hero{min-height:790px}.hero-copy{padding-left:max(12%,calc((100vw - 1430px)/2))}.order{padding-left:max(8%,calc((100vw - 1400px)/2));padding-right:max(8%,calc((100vw - 1400px)/2))}}
+@media(max-width:1100px){.navbar{padding-left:4%;padding-right:4%}.navbar nav{gap:18px}.hero-copy{padding-left:10%;padding-right:8%}.hero h1{font-size:80px}.section{padding:88px 6%}.product{gap:8%}.product-photo{height:500px}.footer-main{gap:28px}.footer-brand span{font-size:21px}.order form{padding:25px}.gallery-grid{gap:19px}}
+@media(max-width:800px){.navbar{height:85px}.navbar nav{top:85px}.brand img{width:43px;height:62px}.hero{min-height:610px}.hero-copy{padding:50px 8% 70px}.hero h1{font-size:68px}.hero-description{font-size:13px}.hero-whatsapp{font-size:11px;padding:15px 17px}.hero-signature{font-size:15px}.editorial-photo img{height:440px}.section-copy p{font-size:13px}.product-photo{height:450px}.product-copy h3{font-size:54px}.seasonal-copy{padding:46px 10%}.seasonal h2{font-size:48px}.seasonal>img{height:520px}.seasonal p{font-size:13px}.gallery-grid{gap:16px}.order{gap:5%}.order form{padding:22px}.order .button{font-size:11px;gap:9px}.contact-whatsapp strong{font-size:18px}.footer-main{grid-template-columns:1fr 1fr}.footer-brand{grid-column:1/-1;width:auto;margin:0}.footer-social{max-width:240px}.nav-cta{margin-right:15px}.story{padding-top:25px;padding-bottom:85px}}
+@media(max-width:600px){.navbar{height:80px;padding:10px 5%}.navbar nav{top:80px}.brand img{width:38px;height:58px}.brand span{font-size:7px}.brand strong{font-size:28px}.nav-cta{padding:11px 12px;gap:8px;margin-right:9px;font-size:10px;min-height:41px}.nav-cta svg{display:block}.hero{min-height:0}.hero-copy{padding:43px 7% 36px}.hero h1{font-size:73px;line-height:1.02;margin-bottom:23px}.hero-brand{margin-top:24px}.hero-description{font-size:13px;line-height:1.85;max-width:300px}.hero-actions{margin-top:26px;gap:21px}.hero .button{font-size:12px;padding:16px 20px;gap:13px}.hero-signature{font-size:15px;margin-top:31px}.hero-photo{height:450px}.hero-photo>img{object-position:center 53%}.hero-discover{font-size:11px}.section{padding:70px 7%}.about{gap:32px}.about .section-copy{padding-top:5px}.editorial-photo{margin-right:0}.editorial-photo img{height:430px}.section-copy h2{font-size:49px}.section-copy p{font-size:14px}.features{gap:27px 19px;padding:30px 0}.features p{font:11px/1.7 Inter,sans-serif;max-width:125px}.features>div{gap:11px}.features svg{width:21px}.section-heading{gap:19px;margin-bottom:32px}.section-heading h2{font-size:46px}.section-heading>p{font-size:12px}.product{gap:31px}.product-photo{height:465px}.product-copy h3{font-size:53px}.product-copy>p{font-size:14px}.product-copy .button{margin-top:13px}.product-copy small{font-size:10px}.seasonal{margin:0 5%}.seasonal-copy{padding:42px 8%}.seasonal h2{font-size:48px;line-height:1.08}.seasonal p{font-size:13px}.seasonal>img{height:420px}.seasonal-note{font-size:10px;margin-top:22px}.gallery-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}.gallery-item{aspect-ratio:3/4}.gallery-item img,.gallery-item:nth-child(3n+1) img,.gallery-item:nth-child(5n) img{height:100%}.gallery-more{gap:15px;padding:20px 0 15px}.gallery-more .underlined{font-size:11px}.gallery-more>span{font-size:9px}.gallery .section-heading .underlined{white-space:normal}.story{padding-top:5px;padding-bottom:70px}.story h2{font-size:46px}.story p{font-size:22px;line-height:1.75}.story-signature{font-size:9px}.order{gap:37px;padding-top:65px;padding-bottom:65px}.order h2{font-size:49px}.contact-whatsapp strong{font-size:21px}.contact-whatsapp{padding-top:23px;margin-top:26px}.contact-link:not(.contact-whatsapp){font-size:12px}.order form{padding:25px 19px}.order input,.order select,.order textarea{font-size:16px}.order label{font-size:11px}.order label span{font-size:9px}.order .button{font-size:11px;padding:16px 12px;gap:10px}.order .button>svg:last-child{width:15px;margin-left:0}.order small{font-size:9px}footer{padding:43px 7% 24px}.footer-main{gap:29px 20px}.footer-brand{gap:16px}.footer-brand span{font-size:23px}.footer-brand img{width:55px;height:82px}.footer-brand i{font-size:10px}.footer-main nav{grid-template-columns:1fr;gap:16px;font-size:11px}.footer-social{font-size:10px;gap:21px}.footer-social a{gap:8px;align-items:start;flex-wrap:wrap}.footer-social a>svg:last-child{display:none}.footer-social strong{font-size:11px}.footer-social a:first-child{font-size:9px;word-break:break-word}.footer-bottom{padding-right:25px}.whatsapp-float{right:16px;bottom:calc(16px + env(safe-area-inset-bottom));width:47px;height:47px}.whatsapp-tooltip{display:none}}
+
+@media(max-width:600px){.about,.product,.order{grid-template-columns:minmax(0,1fr)}.order form,.order .section-copy{min-width:0}.contact-whatsapp small{text-align:left;margin-top:0}.footer-main{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}}
+@media(min-width:601px){.contact-whatsapp small{text-align:left;margin-top:0}}

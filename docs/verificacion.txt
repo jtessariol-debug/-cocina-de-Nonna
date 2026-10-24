@@ -1,0 +1,7 @@
+﻿Verificación completada:
+- npm.cmd run build: correcto.
+- Chrome: 375, 390, 430, 768, 1024, 1440 y 1920 px sin desbordamiento horizontal.
+- 17 imágenes en la página, ninguna rota; 11 fotografías originales distintas.
+- Menú móvil, lightbox, siguiente fotografía y generación del mensaje de pedido: correctos.
+- Ninguna excepción de JavaScript en la revisión final.
+- Capturas internas de QA a 390 y 1440 px en .qa/.

@@ -1,8 +1,8 @@
 # Los Ponches de Nonna
 
-Sitio local en React + Vite, JavaScript y CSS, sin backend.
+Sitio comercial en React, Vite, JavaScript y CSS. Slogan oficial: **La Cocina de Nonna**. Pedidos y consultas por WhatsApp, sin backend ni checkout.
 
-## Ejecutar
+## Desarrollo
 
 ```sh
 npm install
@@ -11,65 +11,50 @@ npm run build
 npm run preview
 ```
 
-En PowerShell con scripts restringidos, usar `npm.cmd` en lugar de `npm`.
+En PowerShell con restricciones de ejecución, usar `npm.cmd` en lugar de `npm`.
 
-## Editar contenido
+## Datos y configuración
 
-- `src/config/contact.js`: WhatsApp e Instagram. El número 1 849 206 5831 se transcribió de la foto promocional original `WhatsApp Image 2026-10-18 at 9.13.05 PM (2).jpeg`. Si se deja vacío, los enlaces ofrecen el formulario o Instagram sin abrir enlaces rotos.
-- `src/data/products.js`: sabores, descripciones, imágenes, tamaños y precios. Solo Pistacho está confirmado. Precio y tamaño vacíos no se muestran. Confirmar moneda antes de agregar un precio con su formato completo.
-- `src/data/images.js`: catálogo visual y descripciones accesibles.
-- `src/components/`: secciones independientes.
-- `src/styles/index.css`: identidad visual y responsive.
+- `src/data/products.js`: los seis sabores oficiales, descripciones, imágenes aprobadas, presentaciones y precios en RD$.
+- `src/data/order.js`: genera el mensaje compartido por tarjetas y formulario con producto, tamaño, cantidad y precio unitario.
+- `src/config/contact.js`: WhatsApp oficial 18492065831, número visible e Instagram.
+- `src/config/commerce.js`: formas de pago, cuentas opcionales, coordinación de entregas, cobertura, tarifas, horarios, conservación y vida útil. Los campos sin confirmar permanecen vacíos y no se muestran.
+- `src/data/images.js`: catálogo de imágenes de marca y galería.
 
-## Selección visual
+## Compra por WhatsApp
 
-Se revisaron el logo y las 11 fotografías aportadas. No se generaron ni descargaron fotografías. Los originales permanecen intactos en la raíz.
+Las tarjetas y el formulario permiten elegir presentación y cantidad (mínimo 1), calculan precio y subtotal e indican «Delivery no incluido». El mensaje se prepara con los datos seleccionados; el visitante lo envía en WhatsApp para confirmar disponibilidad, pago y entrega. No se almacena información en un servidor.
 
-| Original | Copia organizada | Uso |
-| --- | --- | --- |
-| Logo.jpeg | assets/logo/logo-nonna.jpeg | Navbar y footer; copia en public para favicon |
-| 9.13.04 PM | gallery/botellas-borgona.jpeg | Galería, sabor sin identificar |
-| 9.13.05 PM (1) | gallery/regalos-navidad.jpeg | Temporada y galería |
-| 9.13.05 PM (2) | gallery/ponche-santa-contacto.jpeg | Galería y fuente del contacto |
-| 9.13.05 PM (3) | gallery/mesa-navidad.jpeg | Galería |
-| 9.13.05 PM | gallery/arbol-navidad.jpeg | Galería |
-| 9.14.09 PM (1) | gallery/cocina-artesanal.jpeg | About y galería |
-| 9.14.09 PM (2) | gallery/brindis-pistacho.jpeg | Galería |
-| 9.14.09 PM (3) | gallery/botellas-orquideas.jpeg | Galería |
-| 9.14.09 PM (4) | gallery/promocional-nonna.jpeg | Galería, composición promocional |
-| 9.14.09 PM | products/pistacho.jpeg | Producto confirmado y galería |
-| 9.14.10 PM | hero/ponches-lazo-borgona.jpeg | Hero, galería y copia Open Graph |
+## Componentes y estilos
 
-Las rutas de la tabla son relativas a `src/assets/`. Todos los originales fotográficos comienzan con `WhatsApp Image 2026-10-18 at` y terminan en `.jpeg`. Algunas piezas incluyen elementos gráficos y márgenes incrustados en el archivo original, que se conservaron.
+- `Products.jsx`: catálogo responsive de 3/2/1 columnas.
+- `QuantitySelector.jsx`: control accesible de cantidad reutilizado en catálogo y formulario.
+- `OrderSection.jsx`: nombre, sabor, tamaño, cantidad, resumen y mensaje opcional.
+- `CommerceInfo.jsx`: Formas de pago, Entrega y pedidos, Conservación.
+- `ProductPhotoModal.jsx`: ampliación de fotos, cierre con Escape, retorno de foco.
+- `MenuSection.jsx`: menú HTML con precios oficiales y soporte de imagen completa aprobada.
+- `WhatsAppIcon.jsx`: logo reconocible de WhatsApp usando react-icons/si.
+- `src/styles/`: estilos generales, refinamientos, catálogo, menú e información comercial.
 
-## Datos pendientes
+## Fotografías
 
-Precios, moneda, tamaños, otros sabores confirmados, entregas, horarios y dominio definitivo. El formulario prepara una consulta por WhatsApp; el pedido se envía cuando el visitante lo confirma en WhatsApp. No almacena datos ni confirma disponibilidad. Al publicar, configurar `og:image` con la URL absoluta del dominio definitivo.
+Se conservan los originales. Las fotografías individuales aprobadas se copiaron desde Descargas; el catálogo utiliza WebP a resolución original, con lazy loading, dimensiones explícitas y object-fit contain. No se modifica el texto incrustado en fotos o etiquetas.
 
-## Refinamiento de presentación
+Chocolate de Nonna utiliza la nueva fotografía oficial «Chocolate de Nonna Luxury Advertisement.png». Se conserva una copia PNG en src/assets/products/chocolate-de-nonna.png y se sirve la versión chocolate-de-nonna.webp (1122 × 1402, aproximadamente 260 KB). La tarjeta y el lightbox comparten imagen y alt oficial. Los archivos históricos originales permanecen intactos y sin importarse al catálogo.
 
-Se ajustaron los componentes de navegación, hero, About, productos, temporada, galería, historia, pedidos, botón flotante y footer. `src/styles/refinements.css` contiene los ajustes visuales sobre los estilos existentes. `src/components/WhatsAppIcon.jsx` unifica el logo de WhatsApp usando react-icons/si. El número oficial confirmado se centraliza en `src/config/contact.js`, incluyendo su formato visible.
+El PNG del menú general todavía no está disponible como archivo local. Incorporar únicamente una versión con todos los nombres vigentes en `src/assets/menu/menu-ponches-nonna.png`. Mientras tanto se muestra el menú HTML actualizado; nunca reutilizar una imagen que contradiga los nombres oficiales.
 
-La galería presenta seis fotografías seleccionadas y permite ampliar a las once originales. No se reemplazó ninguna imagen ni se agregaron sabores o precios.
+## Información pendiente de la clienta
 
-Verificación final: build correcto; Chrome a 375, 390, 430, 768, 1024, 1440 y 1920 px; sin imágenes rotas ni excepciones de JavaScript. Menú móvil, galería, expansión a 11 fotos y mensaje del formulario verificados. Todos los enlaces de WhatsApp usan 18492065831. Capturas de revisión en .qa/.
+- Archivo del menú general con nombres vigentes.
+- Datos bancarios oficiales, si desea publicarlos.
+- Cobertura, tarifas, horarios y condiciones exactas de delivery.
+- Vida útil y recomendaciones precisas de conservación. Las dos instrucciones provisionales del encargo figuran en `commerce.js` con comentario de confirmación pendiente.
+- Dominio definitivo para convertir og:image a una URL absoluta al publicar.
 
-## Menú oficial
+## Verificación de esta actualización
 
-`src/components/MenuSection.jsx` se ubica después de Nuestros Ponches y antes de la galería. `src/styles/menu.css` define la presentación y el modal. `src/data/products.js` contiene los seis sabores y los doce precios oficiales en RD$, que también alimentan el selector de pedidos. La sección de productos mantiene únicamente fotografías identificadas, sin atribuir imágenes de Pistacho a otros sabores.
+Build correcto. Chrome a 375, 390, 430, 768, 1024 y 1440 px: seis productos, columnas correctas, sin imágenes rotas ni desbordamientos. Se comprobaron precios, tamaños, cantidad mínima, subtotales, mensajes de seis tarjetas y seis pedidos del formulario, Instagram y modales de las fotografías publicadas. Sin excepciones JavaScript. Resultados y capturas internas en `.qa/commercial-results.json` y `.qa/commercial-*.png`.
 
-Pendiente: el PNG aprobado del menú no estaba disponible como archivo local. Guardarlo en `src/assets/menu/menu-ponches-nonna.png` permite que el componente lo incorpore automáticamente, con imagen completa y ampliación accesible. Mientras falta, los precios oficiales se muestran en HTML sin imagen sustituta. Es necesario verificar carga del archivo y modal con el PNG real. No se modificó el slogan incrustado en la imagen aprobada.
 
-Build y navegación comprobados; precios, enlace de WhatsApp, selector de sabores y responsive verificados en Chrome a 375, 390, 430, 768, 1024, 1440 y 1920 px, sin excepciones JavaScript.
-
-## Catálogo con fotografías individuales oficiales
-
-La sección Nuestros Ponches muestra ahora los seis sabores en un grid de 3/2/1 columnas (escritorio/tablet/móvil). Cada producto tiene su fotografía correcta, ambos precios, selector de presentación, importe actualizado y enlace de WhatsApp con sabor, tamaño y precio. Verde Navidad conserva su nombre y lleva «Edición Navideña»; Chocolate Dubai lleva «Especialidad».
-
-Archivos actualizados: `src/data/products.js`, `src/components/Products.jsx`. Archivos nuevos: `src/components/ProductPhotoModal.jsx`, `src/styles/products.css` y seis pares JPG/WebP en `src/assets/products/`. Los originales proceden de Descargas, con sus nombres Pistacho.jpeg, tradicional.jpeg, Amaretto.jpeg, Nutella.jpeg, Verde navidad.jpeg y Chocolate Dubai.jpeg. Se conservaron tanto en Descargas como en las copias JPG del proyecto. La foto anterior pistacho.jpeg permanece para la galería histórica; las tarjetas usan exclusivamente las nuevas WebP.
-
-WebP a resolución original: 1.33 MB en total frente a 2.36 MB de los JPG (aproximadamente 43 % menos). Las imágenes usan contain para conservar nombre, botella y precios completos. No se retocaron los textos incrustados en las fotografías.
-
-Verificación: build correcto. Chrome a 375, 390, 430, 768, 1024 y 1440 px: seis imágenes cargadas, sin desbordamiento y columnas correctas. Verificados los doce precios, cambio de tamaño de los seis productos, mensajes de WhatsApp y modales, foco y cierre con Escape. Sin errores JavaScript. Resultados y capturas internas en .qa/.
-
-La integración del menú completo permanece; el PNG del menú general todavía no está presente en src/assets/menu/.
+Verificación de la imagen de chocolate: build correcto; imagen completa y sin desbordamientos en 375, 390, 430, 768, 1024 y 1440 px. Precios 350 ml/RD$975 y 750 ml/RD$1,275, cantidades, subtotal, enlace de WhatsApp y apertura/cierre del lightbox comprobados. Sin errores JavaScript. Resultados internos: .qa/chocolate-results.json.

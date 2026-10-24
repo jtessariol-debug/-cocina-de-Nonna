@@ -1,0 +1,40 @@
+.commerce-info{display:grid;grid-template-columns:1fr 1.2fr .85fr;gap:50px;padding-top:65px;padding-bottom:80px;border-top:1px solid #d9d0bd}
+.commerce-info article{min-width:0}
+.commerce-info article>svg{color:#8e753f;margin-bottom:19px}
+.commerce-info h2{font-size:32px;letter-spacing:-.4px;margin-bottom:22px}
+.commerce-info p,.commerce-info li{font-size:12px;line-height:1.9;color:#5c6352}
+.commerce-info p{margin-bottom:15px}
+.commerce-info ul{padding-left:16px;margin:0 0 18px}
+.commerce-info li{padding-left:3px;margin-bottom:9px}
+.payment-account{font-size:12px;border-top:1px solid #d9d0bd;padding-top:14px}
+.payment-account div{margin-bottom:9px}.payment-account dt{font-weight:500}.payment-account dd{margin:4px 0 0;overflow-wrap:anywhere}
+.quantity-label{display:block;font-size:10px;color:#606355;margin-bottom:8px}
+.quantity-stepper{display:inline-grid;grid-template-columns:44px minmax(36px,auto) 44px;align-items:center;border:1px solid #ccc4b2;background:#fffdf8}
+.quantity-stepper button{display:grid;place-items:center;width:44px;height:44px;padding:0;background:transparent;color:#26341f;transition:background .2s}
+.quantity-stepper button:hover:not(:disabled){background:#e9e5d9}
+.quantity-stepper button:disabled{color:#9b9d91;cursor:default}
+.quantity-stepper output{font-size:14px;text-align:center;font-variant-numeric:tabular-nums;padding:0 5px}
+.catalog-quantity-row{display:flex;justify-content:space-between;align-items:flex-end;gap:15px;margin-top:20px}
+.catalog-quantity-row .quantity-label{max-width:170px}
+.catalog-subtotal{display:flex;flex-direction:column;align-items:flex-end;gap:9px;padding-bottom:10px;white-space:nowrap}
+.catalog-subtotal span{font-size:10px;color:#606355}
+.catalog-subtotal strong{font-size:16px;font-weight:500;font-variant-numeric:tabular-nums}
+.catalog-delivery-note{font-size:10px;text-align:right;color:#606355;margin:9px 0 19px;line-height:1.7}
+.catalog-description{font-size:12px;color:#606355;line-height:1.85;min-height:67px;margin-bottom:20px}
+.catalog-delivery-footnote{font-size:11px;text-align:center;line-height:1.9;margin:34px 0 0;color:#606355}
+.catalog-product--text{display:flex;align-items:stretch;border:1px solid #d8c9a9;background:#f0eade}
+.catalog-product--text .catalog-content{display:flex;flex-direction:column;justify-content:center;width:100%;padding:32px 25px}
+.catalog-product--text .catalog-title{min-height:0;margin-bottom:25px}
+.catalog-product--text .catalog-title h3{font-size:48px;line-height:1.12;max-width:250px}
+.catalog-product--text .catalog-description{min-height:0;margin-bottom:32px}
+.order .order-summary{margin:0 0 22px;padding:15px 0;border-top:1px solid #d9d0bd;border-bottom:1px solid #d9d0bd;display:flex;justify-content:space-between;gap:20px;align-items:center}
+.order-summary span{display:block;font-size:10px;line-height:1.8;color:#606355}
+.order-summary strong{display:block;font-weight:500;font-size:19px;margin-bottom:4px}
+.order-summary>div:last-child{text-align:right}
+.order .quantity-label{font-size:11px;font-weight:500;margin-bottom:10px}
+.order .quantity-control{margin-bottom:24px}
+.order .quantity-stepper{width:100%;grid-template-columns:44px 1fr 44px;min-height:48px}
+.order .quantity-stepper button{height:46px}
+@media(max-width:1100px){.commerce-info{gap:32px}.catalog-product--text .catalog-content{padding:28px 20px}}
+@media(max-width:800px){.commerce-info{grid-template-columns:1fr 1fr;gap:36px 30px}.commerce-info article:last-child{grid-column:1/-1}.catalog-quantity-row{gap:10px}.catalog-subtotal strong{font-size:15px}}
+@media(max-width:600px){.commerce-info{grid-template-columns:minmax(0,1fr);padding-top:45px;padding-bottom:55px;gap:32px}.commerce-info article+article{border-top:1px solid #d9d0bd;padding-top:28px}.commerce-info article:last-child{grid-column:auto}.commerce-info h2{font-size:32px;margin-bottom:16px}.commerce-info p,.commerce-info li{font-size:13px}.catalog-description{min-height:0;font-size:13px}.catalog-title{min-height:0}.catalog-subtotal strong{font-size:17px}.catalog-product--text .catalog-content{padding:35px 25px}.catalog-product--text .catalog-title h3{font-size:48px}.catalog-delivery-footnote{font-size:11px}.order .quantity-stepper output{font-size:16px}}

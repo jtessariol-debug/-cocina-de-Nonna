@@ -18,7 +18,7 @@ export default function ProductPhotoModal({product, onClose, returnFocus}) {
   return createPortal(<div className="product-lightbox" onClick={onClose}>
     <div className="product-dialog" role="dialog" aria-modal="true" aria-label={`Fotografía de ${product.name}`} onClick={event => event.stopPropagation()}>
       <button ref={close} className="product-modal-close" onClick={onClose} aria-label="Cerrar fotografía"><X size={24}/></button>
-      <figure><img src={product.image} alt={`Fotografía oficial del ponche ${product.name} de Los Ponches de Nonna`} width={product.width} height={product.height}/><figcaption>{product.name} · Los Ponches de Nonna</figcaption></figure>
+      <figure><img src={product.image} alt={product.alt || `Fotografía oficial del ponche ${product.name} de Los Ponches de Nonna`} width={product.width} height={product.height}/><figcaption>{product.name} · Los Ponches de Nonna</figcaption></figure>
     </div>
   </div>, document.body);
 }

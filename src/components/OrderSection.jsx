@@ -2,7 +2,7 @@
 import {ArrowUpRight, Instagram} from 'lucide-react';
 import WhatsAppIcon from './WhatsAppIcon';
 import QuantitySelector from './QuantitySelector';
-import {products, formatPrice} from '../data/products';
+import {products, formatPrice, formatSubtotal} from '../data/products';
 import {orderMessage} from '../data/order';
 import {delivery} from '../config/commerce';
 import {INSTAGRAM_URL, INSTAGRAM_USERNAME, WHATSAPP_DISPLAY, whatsappUrl} from '../config/contact';
@@ -32,7 +32,7 @@ export default function OrderSection() {
       <label htmlFor="nombre">Tu nombre</label><input id="nombre" name="nombre" placeholder="¿Cómo te llamas?" required maxLength="100" autoComplete="name" pattern=".*\S.*"/>
       <label htmlFor="sabor">Sabor</label><select id="sabor" name="sabor" value={productId} onChange={event => {setProductId(event.target.value);setStatus('');}}>{products.map(item => <option key={item.id} value={item.id}>{item.name}</option>)}</select>
       <div className="form-row"><div><label htmlFor="presentacion">Presentación</label><select id="presentacion" name="presentacion" value={size} onChange={event => {setSize(event.target.value);setStatus('');}}>{product.presentations.map(item => <option key={item.size}>{item.size}</option>)}</select></div><QuantitySelector id="cantidad" value={quantity} onChange={value => {setQuantity(value);setStatus('');}}/></div>
-      <div className="order-summary" aria-live="polite" aria-atomic="true"><div><span>Precio unitario</span><strong>{formatPrice(selected.price)}</strong><span>{selected.size} · {quantity} {quantity === 1 ? 'botella' : 'botellas'}</span></div><div><span>Subtotal estimado</span><strong>{formatPrice(selected.price * quantity)}</strong><span>{delivery.subtotalNote}</span></div></div>
+      <div className="order-summary" aria-live="polite" aria-atomic="true"><div><span>Precio unitario</span><strong>{formatPrice(selected.price)}</strong><span>{selected.size} · {quantity} {quantity === 1 ? 'botella' : 'botellas'}</span></div><div><span>Subtotal estimado</span><strong>{formatSubtotal(selected.price, quantity)}</strong><span>{delivery.subtotalNote}</span></div></div>
       <label htmlFor="mensaje">¿Algo más que debamos saber? <span>(opcional)</span></label><textarea id="mensaje" name="mensaje" rows="3" maxLength="1500" placeholder="Es para un regalo, una celebración…"/>
       <button className="button dark whatsapp-cta" type="submit"><WhatsAppIcon/> Enviar pedido por WhatsApp <ArrowUpRight size={18}/></button><small>Al continuar, se abrirá WhatsApp para que envíes tu consulta.</small><p className="form-status" role="status">{status}</p>
     </form>

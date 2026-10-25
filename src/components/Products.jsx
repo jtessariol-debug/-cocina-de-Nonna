@@ -3,7 +3,7 @@ import {ArrowUpRight} from 'lucide-react';
 import WhatsAppIcon from './WhatsAppIcon';
 import ProductPhotoModal from './ProductPhotoModal';
 import QuantitySelector from './QuantitySelector';
-import {products, formatPrice} from '../data/products';
+import {products, formatPrice, formatSubtotal} from '../data/products';
 import {orderMessage} from '../data/order';
 import {whatsappUrl} from '../config/contact';
 import {delivery} from '../config/commerce';
@@ -23,7 +23,7 @@ function ProductCard({product, onOpen}) {
       <p className="catalog-description">{product.description}</p>
       <dl className="catalog-prices">{product.presentations.map(item => <div key={item.size}><dt>{item.size}</dt><dd>{formatPrice(item.price)}</dd></div>)}</dl>
       <div className="catalog-selection"><label htmlFor={`size-${product.id}`}>Presentación</label><select id={`size-${product.id}`} value={size} onChange={event => setSize(event.target.value)}>{product.presentations.map(item => <option key={item.size} value={item.size}>{item.size}</option>)}</select><span className="catalog-selected-price" aria-live="polite" aria-atomic="true">{formatPrice(selected.price)}</span></div>
-      <div className="catalog-quantity-row"><QuantitySelector id={`quantity-${product.id}`} value={quantity} onChange={setQuantity} label={`Cantidad de ${product.name}`}/><div className="catalog-subtotal"><span>Subtotal</span><strong aria-live="polite" aria-atomic="true">{formatPrice(selected.price * quantity)}</strong></div></div>
+      <div className="catalog-quantity-row"><QuantitySelector id={`quantity-${product.id}`} value={quantity} onChange={setQuantity} label={`Cantidad de ${product.name}`}/><div className="catalog-subtotal"><span>Subtotal</span><strong aria-live="polite" aria-atomic="true">{formatSubtotal(selected.price, quantity)}</strong></div></div>
       <p className="catalog-delivery-note">{delivery.subtotalNote}</p>
       <a className="button dark whatsapp-cta catalog-order" href={whatsappUrl(message)} target="_blank" rel="noreferrer" aria-label={`Pedir ${quantity} de ${product.name}, ${selected.size}, por WhatsApp`}><WhatsAppIcon size={18}/> Pedir por WhatsApp <ArrowUpRight size={15} aria-hidden="true"/></a>
     </div>

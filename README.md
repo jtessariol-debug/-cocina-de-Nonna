@@ -15,7 +15,7 @@ En PowerShell con restricciones de ejecución, usar `npm.cmd` en lugar de `npm`.
 
 ## Datos y configuración
 
-- `src/data/products.js`: los seis sabores oficiales, descripciones, imágenes aprobadas, presentaciones y precios en RD$.
+- `src/data/products.js`: los siete sabores oficiales, descripciones, imágenes aprobadas, presentaciones y precios en RD$.
 - `src/data/order.js`: genera el mensaje compartido por tarjetas y formulario con producto, tamaño, cantidad y precio unitario.
 - `src/config/contact.js`: WhatsApp oficial 18492065831, número visible e Instagram.
 - `src/config/commerce.js`: formas de pago, cuentas opcionales, coordinación de entregas, cobertura, tarifas, horarios, conservación y vida útil. Los campos sin confirmar permanecen vacíos y no se muestran.
@@ -58,3 +58,15 @@ Build correcto. Chrome a 375, 390, 430, 768, 1024 y 1440 px: seis productos, col
 
 
 Verificación de la imagen de chocolate: build correcto; imagen completa y sin desbordamientos en 375, 390, 430, 768, 1024 y 1440 px. Precios 350 ml/RD$975 y 750 ml/RD$1,275, cantidades, subtotal, enlace de WhatsApp y apertura/cierre del lightbox comprobados. Sin errores JavaScript. Resultados internos: .qa/chocolate-results.json.
+
+## Dulce de Leche
+
+Se agregó como séptimo producto sin reemplazar los anteriores. Foto oficial: `Nonna Dulce de Leche Indulgence.png`, conservada en la raíz y copiada a `src/assets/products/dulce-de-leche.png`. La web sirve `dulce-de-leche.webp`, 1122 × 1402 px y aproximadamente 274 KB. Alt de tarjeta y lightbox: «Dulce de Leche de Los Ponches de Nonna».
+
+Faltan confirmar ambos precios: 350 ml y 750 ml. Configurarlos en la entrada `dulce-de-leche` de `src/data/products.js`, cambiando `presentations(null,null)` por `presentations(precio350,precio750)`. El primer importe corresponde a 350 ml; el segundo, a 750 ml. No se copiaron precios de otros sabores.
+
+Mientras faltan importes, el catálogo, el menú y el formulario muestran «Consultar precio»; el subtotal permanece «Por confirmar». WhatsApp incluye el sabor, la presentación y la cantidad seleccionados, indica precio por confirmar y solicita precio y disponibilidad. Al ingresar importes confirmados, los precios, subtotales y mensajes se actualizarán desde los mismos datos.
+
+El último producto se centra en escritorio y tablet. Verificados build, siete fotos, siete opciones de sabor, tamaños, cantidad mínima, subtotal pendiente, WhatsApp, lightbox, menú y formulario a 375, 390, 430, 768, 1024 y 1440 px. Los seis sabores existentes conservan nombres, fotos, precios y cálculos. Sin errores JavaScript ni desbordamientos.
+
+Capturas: `docs/previews/dulce-de-leche-movil.png` y `docs/previews/dulce-de-leche-escritorio.png`.
